@@ -3,7 +3,7 @@
 A font glyph visualization and analysis tool built with Tkinter + Matplotlib + Shapely. Parses glyph contours from TrueType/OpenType fonts, classifies outer/inner contours, builds modular structures, triangulates the mesh, and displays hierarchical module relationships.
 
 ---
-
+![example.png](example.png)
 ## Features
 
 ### 1. Glyph Contour Parsing
