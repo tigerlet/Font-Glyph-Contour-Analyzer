@@ -74,7 +74,7 @@ pip install numpy freetype-py shapely matplotlib
 ## Usage
 
 ```bash
-python show2.py
+python FGCA.py
 ```
 
 ### Steps
@@ -128,14 +128,36 @@ When **Bisect Level** &gt; 0:
 
 ---
 
-## Project Files
+## Project Structure
 
-| File | Description |
-|------|-------------|
-| `show2.py` | Main program: all core algorithms + GUI |
-| `tt.py` | Reference implementation: precision clipping approach for triangulation |
-| `_test_hierarchy.py` | Module hierarchy test script |
-| `_test_compare.py` | Character triangulation comparison test script |
+```
+FGCA/
+├── FGCA.py                 # Main program entry
+├── FGCA_CN.py              # Original Chinese version backup
+├── FGCA_en.py              # Original English version backup
+├── core/                   # Core algorithm modules
+│   ├── __init__.py         # Unified export interface
+│   ├── glyph_module.py     # GlyphModule data structure
+│   ├── contour_geometry.py # Contour geometry calculations
+│   ├── contour_classifier.py # Contour classification & hierarchy building
+│   ├── contour_subdivision.py # Contour subdivision algorithms
+│   ├── triangulation.py    # Mesh triangulation
+│   └── freetype_parser.py  # FreeType font parsing
+├── ui/                     # User interface modules
+│   └── main_window.py      # GUI main window
+└── simhei.ttf              # Default font file
+```
+
+| Module | Description |
+|--------|-------------|
+| `core/glyph_module.py` | `GlyphModule` class: outer contour + inner contours + hierarchy info |
+| `core/contour_geometry.py` | Contour direction detection, polygon repair, point-in-polygon test |
+| `core/contour_classifier.py` | Outer/inner contour classification, module building, hierarchy tree |
+| `core/contour_subdivision.py` | Contour subdivision (bisection) for finer triangulation |
+| `core/triangulation.py` | Shapely-based polygon triangulation with precision clipping |
+| `core/freetype_parser.py` | TrueType/OpenType font contour parsing |
+| `ui/main_window.py` | Tkinter GUI with matplotlib visualization |
+| `FGCA.py` | Program entry point |
 
 ---
 
