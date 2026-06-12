@@ -172,15 +172,14 @@ FGCA/
 | &#26085; (Ri) | 1 | M1 (root, 2 holes) | Single module with two holes |
 | A | 1 | M1 (root, 1 hole) | Triangular interior of letter A |
 
+
+
+## License
+
+MIT
+
 ## Author
 
 Yuming Xu
 
 ---
-
-
----
-
-## License
-
-MIT
